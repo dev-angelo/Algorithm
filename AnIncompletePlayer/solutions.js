@@ -39,7 +39,7 @@ function solution(participant, completion) {
 
     answer = participant[participant.length - 1];
 
-    for (let index = 0 ; index < completion.length - 1 ; ++index) {
+    for (let index = 0 ; index < completion.length ; ++index) {
         if (participant[index] !== completion[index]) {
             answer = participant[index];
             break;
