@@ -4,7 +4,7 @@ run();
 
 function run() {
     const participant = ["marina", "josipa", "nikola", "vinko", "filipa"];
-    const completion = ["marina", "josipa", "vinko", "filipa"];
+    const completion = ["marina", "josipa", "nikola", "vinko"];
 
     const noCompletion = solution(participant, completion);
 
