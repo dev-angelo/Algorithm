@@ -3,10 +3,18 @@ const solution = require('./solutions.js').solution;
 run();
 
 function run() {
-    const participant = ["marina", "josipa", "nikola", "vinko", "filipa"];
-    const completion = ["marina", "josipa", "nikola", "vinko"];
+    let participant = ["leo", "kiki", "eden"];
+    let completion = ["eden", "kiki"];
+    let noCompletion = solution(participant, completion);
+    console.log(noCompletion);
 
-    const noCompletion = solution(participant, completion);
+    participant = ["marina", "josipa", "nikola", "vinko", "filipa"];
+    completion = ["josipa", "filipa", "marina", "nikola"];
+    noCompletion = solution(participant, completion);
+    console.log(noCompletion);
 
+    participant = ["mislav", "stanko", "mislav", "ana"];
+    completion = ["stanko", "ana", "mislav"];
+    noCompletion = solution(participant, completion);
     console.log(noCompletion);
 }
