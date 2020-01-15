@@ -19,7 +19,9 @@ function solution() {
 
         if (receivedNumbers.length == parseInt(receivedNumbers[0]) + 1) {
             receivedNumbers = receivedNumbers.slice(1, receivedNumbers.length);
-            sortedNumbers = receivedNumbers.sort();
+            sortedNumbers = receivedNumbers.sort(function(a, b){
+                return a-b;
+            });
             r.close();
         }
     });
