@@ -10,7 +10,7 @@ function solution() {
        output: process.stdout 
     });
 
-    r.setPrompt('>');
+    r.setPrompt('');
     r.prompt();
 
     r.on('line', function(line){
