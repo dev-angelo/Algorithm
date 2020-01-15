@@ -11,7 +11,12 @@ function solution(numbers) {
         else {
             if ( a > b ) {
                 if (a/b >= 10) {
-                    return -1;
+                    if (a % 10 >= parseInt(b.toString()[0]) ) {
+                        return -1;
+                    }
+                    else {
+                        return 1;
+                    }
                 }
                 else {
                     if ( parseInt(a/b) == 1) {
@@ -24,7 +29,12 @@ function solution(numbers) {
             }
             else if ( b > a ) {
                 if (b/a >= 10) {
-                    return 1;
+                    if (b % 10 >= parseInt(a.toString()[0]) ) {
+                        return 1;
+                    }
+                    else {
+                        return -1;
+                    }
                 }
                 else {
                     if ( parseInt(b/a) === 1) {
