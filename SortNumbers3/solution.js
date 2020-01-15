@@ -1,38 +1,46 @@
 function solution() {
     let answer = [];
-    let receivedNumbers = [];
-    let sortedNumbers;
-    
+    let input = [];
+
     var readline = require('readline');
 
     var r = readline.createInterface({
        input: process.stdin,
-       output: process.stdout 
+       output: process.stdout
     });
 
-    r.setPrompt('');
-    r.prompt();
-
     r.on('line', function(line){
-        receivedNumbers.push(line);
-        r.prompt();
+        input.push(line);
 
-        if (receivedNumbers.length == parseInt(receivedNumbers[0]) + 1) {
-            receivedNumbers = receivedNumbers.slice(1, receivedNumbers.length);
-            sortedNumbers = receivedNumbers.sort(function(a, b){
-                return a-b;
-            });
+        if (input.length === (parseInt(input[0]) + 1)) {
+            let count = input[0];
+
+            input.splice(0, 1);
+
+            for (let index = 0; index < count; index++) {
+                if (answer[input[index]] == undefined) {
+                    answer[input[index]] = 1;
+                }
+                else {
+                    answer[input[index]] += 1;
+                }
+            }
+
             r.close();
         }
     });
 
     r.on('close', function() {
-        for(let i = 0 ; i < sortedNumbers.length ; ++i) {
-            console.log(sortedNumbers[i]);
-        }
+        answer.forEach(function (currentValue, currentIndex) {
+            for (let index = 0 ; index < currentValue ; index++) {
+                console.log(currentIndex);
+            }
+        });
+
+        process.exit();
     })
 
-    return answer;
+    //return answer;
 }
 
 exports.solution = solution;
