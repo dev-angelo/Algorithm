@@ -4,16 +4,17 @@
  */
 var removeDuplicates = function(nums) {
     let value = -1;
-    let count = 0;
 
-    nums.forEach(element => {
-        if (element !== value) {
-            value = element;
-            ++count;
+    for (let index = nums.length - 1 ; index >= 0 ; --index ) {
+        if (nums[index] != value) {
+            value = nums[index];
         }
-    });
+        else {
+            nums.splice(index, 1);
+        }
+    }
 
-    return count;
+    return nums.length;
 };
 
 exports.solution = removeDuplicates;
