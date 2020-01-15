@@ -2,52 +2,17 @@ function solution(numbers) {
     let answer = '';
 
     numbers = numbers.sort(function(a, b){
-        if ( parseInt(a.toString()[0]) > parseInt(b.toString()[0]) ) {
+        let num1 = parseInt(a.toString() + b.toString());
+        let num2 = parseInt(b.toString() + a.toString());
+
+        if ( num1 > num2 ) {
             return -1;
         }
-        else if ( parseInt(a.toString()[0]) < parseInt(b.toString()[0]) ) {
+        else if ( num1 < num2 ) {
             return 1;
         }
         else {
-            if ( a > b ) {
-                if (a/b > 10) {
-                    if (a%b == 0) {
-                        return 1;
-                    }
-                    else {
-                        return -1;
-                    }
-                }
-                else {
-                    if ( parseInt(a/b) == 1) {
-                        return -1
-                    }
-                    else {
-                        return 1;
-                    }
-                }
-            }
-            else if ( b > a ) {
-                if (b/a > 10) {
-                    if (b%10 == 0) {
-                        return -1;
-                    }
-                    else {
-                        return 1;
-                    }
-                }
-                else {
-                    if ( parseInt(b/a) === 1) {
-                        return 1;
-                    }
-                    else {
-                        return -1;
-                    }
-                }
-            }
-            else {
-                return 0;
-            }
+            return 0;
         }
     });
     
