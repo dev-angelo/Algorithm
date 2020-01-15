@@ -10,7 +10,7 @@ function solution(numbers) {
         }
         else {
             if ( a > b ) {
-                if (a/b >= 11) {
+                if (a/b >= 10) {
                     return -1;
                 }
                 else {
@@ -23,7 +23,7 @@ function solution(numbers) {
                 }
             }
             else if ( b > a ) {
-                if (b/a >= 11) {
+                if (b/a >= 10) {
                     return 1;
                 }
                 else {
@@ -41,9 +41,12 @@ function solution(numbers) {
         }
     });
     
-    while (numbers.length !== 0) {
-        answer += numbers[0].toString();
-        numbers = numbers.slice(1, numbers.length);
+    numbers.forEach(element => {
+        answer += element;
+    });
+
+    if (parseInt(answer) == 0) {
+        answer = '0';
     }
     
     return answer;
